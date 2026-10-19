@@ -31,9 +31,7 @@ a {
   outline-offset: 4px;
 }
 .container {
-  width: 100%;
   min-width: 0;
-  padding: 24px 16px;
   overflow-wrap: anywhere;
 }
 .media-skip-link {

@@ -6,6 +6,9 @@
   const isArticles = Boolean(document.querySelector('.media-articles'));
   const prefix = isArticles ? 'articles' : 'news';
   const source = isArticles ? window.SMARTA_ARTICLES : window.SMARTA_NEWS;
+  const completeMessage = isArticles
+    ? 'Показаны все доступные статьи.'
+    : 'Показаны все доступные новости.';
   const forms = isArticles ? ['статья', 'статьи', 'статей'] : ['новость', 'новости', 'новостей'];
   const grid = document.querySelector('#' + prefix + '-grid');
   if (!grid || !Array.isArray(source)) return;
@@ -38,7 +41,7 @@
     return prefix + '.html' + (query.size ? '?' + query : '');
   }
   function card(item, index) {
-    return `<article class="card" data-demo-key="${escape(item.demoKey)}">
+    return `<article class="card">
       <div class="card-media"><img src="assets/images/${escape(item.image)}" width="387" height="220" alt="${escape(item.alt)}" decoding="async"${index >= 3 ? ' loading="lazy"' : ''}></div>
       <div class="card-body"><div class="card-content">
         <div class="card-head"><p class="media-card-meta">${isArticles ? 'Статья' : 'Новость'} &nbsp; / &nbsp; ${item.minutes} мин чтения</p><h2 class="media-card-title"><a class="media-card-link" href="${isArticles ? 'article-detail' : 'news-detail'}.html?id=${encodeURIComponent(item.id)}">${escape(item.title)}</a></h2></div>
@@ -116,9 +119,7 @@
   button.addEventListener('click', () => {
     if (shownUntil >= records.length) {
       status.hidden = false;
-      status.textContent = isArticles
-        ? 'Показаны все доступные статьи.'
-        : 'Показаны все доступные новости.';
+      status.textContent = completeMessage;
       return;
     }
     const next = records.slice(shownUntil, shownUntil + pageSize);
@@ -131,9 +132,7 @@
     status.hidden = false;
     status.textContent =
       shownUntil >= records.length
-        ? isArticles
-          ? 'Показаны все доступные статьи.'
-          : 'Показаны все доступные новости.'
+        ? completeMessage
         : `Показано ${shownUntil - start} из ${records.length} ${forms[2]}.`;
   });
 })();

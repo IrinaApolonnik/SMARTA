@@ -3,12 +3,11 @@
 // Общие действия детальных страниц: галерея, копирование, публикация ссылки и демо-каталог.
 (() => {
   const dialog = document.querySelector('.gallery-dialog');
-  document
-    .querySelectorAll('[data-gallery]')
-    .forEach((button) => button.addEventListener('click', () => dialog.showModal()));
-  if (dialog)
+  if (dialog) {
+    document
+      .querySelectorAll('[data-gallery]')
+      .forEach((button) => button.addEventListener('click', () => dialog.showModal()));
     dialog.querySelector('.gallery-close').addEventListener('click', () => dialog.close());
-  if (dialog)
     dialog.addEventListener('click', (event) => {
       if (event.target === dialog) {
         const r = dialog.getBoundingClientRect();
@@ -21,6 +20,7 @@
           dialog.close();
       }
     });
+  }
   function notify(id, text) {
     const status = document.getElementById(id);
     status.hidden = false;
@@ -58,8 +58,8 @@
   const publicPage =
     /^https?:$/.test(location.protocol) &&
     !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+  const url = encodeURIComponent(location.href);
   document.querySelectorAll('[data-share]').forEach((link) => {
-    const url = encodeURIComponent(location.href);
     link.href =
       link.dataset.share === 'vk'
         ? `https://vk.com/share.php?url=${url}`

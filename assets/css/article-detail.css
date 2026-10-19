@@ -206,7 +206,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
-.related-articles .card-content:where(.card .card-content) {
+.related-articles .card-content {
   gap: 12px;
 }
 .params {
@@ -410,7 +410,7 @@
   .related-articles .card-media > img {
     aspect-ratio: 358 / 204;
   }
-  .related-articles .card-content:where(.card .card-content) {
+  .related-articles .card-content {
     gap: 24px;
   }
 }

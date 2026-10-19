@@ -21,8 +21,8 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* Список новостей: desktop, общие карточки взяты из components.css. */
-.media-news {
+/* Списки новостей и статей: общая сетка и отступы. */
+:is(.media-news, .media-articles) {
   min-width: 1272px;
 }
 .media-hero-title {
@@ -119,7 +119,7 @@
 .media [hidden] {
   display: none !important;
 }
-:is(.news-list, .article-list) .card-content:where(.card .card-content) {
+:is(.news-list, .article-list) .card-content {
   gap: 12px;
 }
 
@@ -163,7 +163,7 @@
   .media-home .home-articles .card-body {
     min-height: 188px;
   }
-  .media-home .home-articles .card-content:where(.card .card-content) {
+  .media-home .home-articles .card-content {
     gap: 12px;
   }
 }
@@ -242,91 +242,92 @@
   }
 }
 
-/* Планшетный список новостей: Figma 5459:2. */
+/* Планшетные списки: Figma 5459:2 и 5460:2. */
 @media (min-width: 768px) and (max-width: 1271.98px) {
-  .media-news {
+  :is(.media-news, .media-articles) {
     min-width: 0;
   }
-  .media-news .container {
+  :is(.media-news, .media-articles) .container {
     width: calc(100% - 64px);
   }
-  .media-news .media-hero {
+  :is(.media-news, .media-articles) .media-hero {
     padding-top: 24px;
   }
-  .media-news .media-hero-head {
+  :is(.media-news, .media-articles) .media-hero-head {
     width: 100%;
   }
-  .media-news .media-hero-title {
+  :is(.media-news, .media-articles) .media-hero-title {
     font-size: 32px;
     line-height: 36px;
   }
-  .media-news :is(.news-list, .article-list) .card-grid {
+  :is(.media-news, .media-articles) :is(.news-list, .article-list) .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .media-news .card-media > img {
+  :is(.media-news, .media-articles) .card-media > img {
     aspect-ratio: 340 / 193;
   }
-  .media-news .card-body {
+  :is(.media-news, .media-articles) .card-body {
     min-height: 210px;
+  }
+  .media-articles .card-body {
+    min-height: 188px;
   }
 }
 
-/* Мобильный список новостей: Figma 5459:457. */
+/* Мобильные списки: Figma 5459:457 и 5460:456. */
 @media (max-width: 767.98px) {
-  .media-news {
+  :is(.media-news, .media-articles) {
     min-width: 0;
   }
-  .media-news .container {
+  :is(.media-news, .media-articles) .container {
     width: calc(100% - 32px);
   }
-  .media-news .media-hero {
+  :is(.media-news, .media-articles) .media-hero {
     padding-top: 24px;
   }
-  .media-news .media-hero-head {
+  :is(.media-news, .media-articles) .media-hero-head {
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
     margin-bottom: 24px;
   }
-  .media-news .media-hero-title {
+  :is(.media-news, .media-articles) .media-hero-title {
     font-size: 28px;
     line-height: 32px;
   }
-  .media-news .media-hero-head p {
+  :is(.media-news, .media-articles) .media-hero-head p {
     flex: none;
     width: 100%;
     font-size: 14px;
     line-height: 20px;
   }
-  .media-news .media-tabs {
+  :is(.media-news, .media-articles) .media-tabs {
     flex-wrap: nowrap;
   }
-  .media-news .media-tabs-item {
+  :is(.media-news, .media-articles) .media-tabs-item {
     min-width: 0;
     padding: 12px 8px;
     font-size: 14px;
     line-height: 20px;
     white-space: nowrap;
   }
-  .media-news :is(.news-list, .article-list) {
+  :is(.media-news, .media-articles) :is(.news-list, .article-list) {
     padding-block: 32px;
   }
-  .media-news :is(.news-list, .article-list) .card-grid {
+  :is(.media-news, .media-articles) :is(.news-list, .article-list) .card-grid {
     grid-template-columns: minmax(0, 1fr);
   }
-  .media-news .card-media > img {
+  :is(.media-news, .media-articles) .card-media > img {
     aspect-ratio: 358 / 204;
   }
-  .media-news .card-body {
+  :is(.media-news, .media-articles) .card-body {
     min-height: 0;
   }
-  .media-news :is(.news-list, .article-list) .card-content:where(.card .card-content) {
+  :is(.media-news, .media-articles) :is(.news-list, .article-list) .card-content {
     gap: 24px;
   }
-}
-@media (max-width: 767.98px) {
-  .media-news .page-title h1 {
+  :is(.media-news, .media-articles) .page-title h1 {
     font-size: 24px;
     line-height: 28px;
   }

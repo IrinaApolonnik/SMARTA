@@ -10,6 +10,7 @@
   const sections = links.map((link) => document.querySelector(link.getAttribute('href')));
   if (!links.length) return;
   let pending = false;
+  let active = -1;
   function sync() {
     pending = false;
     let current = 0;
@@ -17,6 +18,8 @@
     sections.forEach((section, index) => {
       if (section.getBoundingClientRect().top <= line) current = index;
     });
+    if (current === active) return;
+    active = current;
     links.forEach((link, index) => {
       link.classList.toggle('active', index === current);
       if (index === current) link.setAttribute('aria-current', 'location');

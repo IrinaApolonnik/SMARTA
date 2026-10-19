@@ -23,11 +23,6 @@
   font-size: 16px;
   line-height: 24px;
 }
-.media *,
-.media *::before,
-.media *::after {
-  box-sizing: border-box;
-}
 .media h1,
 .media h2,
 .media h3,
@@ -41,7 +36,6 @@
   width: 1208px;
   padding: 0;
   margin-inline: auto;
-  overflow-wrap: anywhere;
 }
 .media-hero {
   background: #f6f7f8;
@@ -122,7 +116,7 @@
   border-top: 0;
   border-radius: 0 0 4px 4px;
 }
-.card-content:where(.card .card-content) {
+:where(.card > .card-body) > .card-content {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -218,7 +212,7 @@
   border: 0;
   min-height: 204px;
 }
-.card-featured .card-content:where(.card .card-content) {
+.card-featured .card-content {
   gap: 16px;
 }
 .card-featured .media-card-meta {
@@ -301,7 +295,4 @@
   color: var(--media-muted);
   font-size: 14px;
   line-height: 20px;
-}
-.media-load-status[hidden] {
-  display: none;
 }
