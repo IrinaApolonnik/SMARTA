@@ -1,0 +1,25 @@
+# Личные материалы: ТЗ, заметки, резервные копии
+.local/
+docs/
+work/
+outputs/
+qa-*.html
+
+# Настройки редакторов и инструменты
+.vscode/
+.idea/
+.codex/
+node_modules/
+dist/
+coverage/
+*.log
+*.tmp
+*.bak
+
+# Секреты и системные файлы
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+Desktop.ini

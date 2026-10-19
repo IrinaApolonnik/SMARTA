@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Медиапортал SMARTA: новости компании, события отрасли и практические статьи о промышленной автоматизации."
+    />
+    <title>Статьи | SMARTA</title>
+    <link
+      rel="preload"
+      href="assets/fonts/smarta-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/smarta-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/articles.css" />
+    <script src="assets/js/articles-data.js" defer></script>
+    <script src="assets/js/media-list.js" defer></script>
+  </head>
+  <body>
+    <a class="media-skip-link" href="#main-content">Перейти к содержимому</a>
+    <!-- Общая шапка и подвал сайта не входят в объём вёрстки. -->
+    <main class="media media-articles" id="main-content">
+      <!-- Медиапортал: заголовок и навигация по разделам -->
+      <section class="media-hero" aria-labelledby="media-title">
+        <div class="container">
+          <div class="media-hero-head">
+            <div class="media-hero-title" id="media-title">
+              <a href="mediaportal.html">Медиапортал</a>
+            </div>
+            <p>
+              Интерактивное цифровое пространство, объединяющее ключевые медиаресурсы нашей
+              экосистемы
+            </p>
+          </div>
+          <nav class="media-tabs" aria-label="Разделы медиапортала">
+            <a class="media-tabs-item" href="news.html">Новости</a>
+            <a
+              class="media-tabs-item"
+              aria-disabled="true"
+              title="Раздел видео не входит в текущий этап"
+              >Видео</a
+            >
+            <a class="media-tabs-item active" href="articles.html" aria-current="page">Статьи</a>
+            <a
+              class="media-tabs-item"
+              aria-disabled="true"
+              title="Раздел файлов не входит в текущий этап"
+              >Файлы</a
+            >
+          </nav>
+        </div>
+      </section>
+
+      <!-- Список публикаций: навигация, фильтры и карточки -->
+      <section class="article-list" aria-labelledby="articles-title">
+        <div class="container">
+          <!-- Хлебные крошки -->
+          <nav class="media-breadcrumb" aria-label="Хлебные крошки">
+            <ol>
+              <li><a href="https://smarta.ru/">Главная</a></li>
+              <li><a href="mediaportal.html">Медиапортал</a></li>
+              <li aria-current="page">Статьи</li>
+            </ol>
+          </nav>
+          <div class="page-title">
+            <h1 id="articles-title">Статьи</h1>
+            <p id="articles-count">30 статей</p>
+          </div>
+          <div class="media-content">
+            <!-- Фильтр публикаций по хэштегам -->
+            <nav class="tag-list media-tags" aria-label="Фильтр статей по хэштегам">
+              <a href="articles.html?tag=Обучение" data-list-tag="Обучение">#Обучение</a
+              ><a href="articles.html?tag=Пневмоавтоматика" data-list-tag="Пневмоавтоматика"
+                >#Пневмоавтоматика</a
+              ><a href="articles.html?tag=Практика" data-list-tag="Практика">#Практика</a
+              ><a href="articles.html" id="reset-filter" hidden>Сбросить фильтр</a>
+            </nav>
+
+            <!-- Карточки публикаций -->
+            <div class="card-grid" id="articles-grid">
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/pneumatic-cylinders.png"
+                    width="387"
+                    height="220"
+                    alt="Пневмоцилиндры разных типов и размеров"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Статья &nbsp; / &nbsp; 4 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="article-detail.html?id=pneumatic-cylinder"
+                          >Как подобрать пневмоцилиндр под вашу задачу</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                        ><a href="articles.html?tag=Практика">#Практика</a>
+                      </div>
+                      <time datetime="2026-09-25">25 сентября 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/air-preparation.png"
+                    width="387"
+                    height="220"
+                    alt="Схема блока подготовки сжатого воздуха"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Статья &nbsp; / &nbsp; 4 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="article-detail.html?id=air-preparation"
+                          >Подготовка сжатого воздуха: с чего начать</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                        ><a href="articles.html?tag=Практика">#Практика</a>
+                      </div>
+                      <time datetime="2026-09-18">18 сентября 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/directional-valve.png"
+                    width="387"
+                    height="220"
+                    alt="Устройство пневмораспределителя"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Статья &nbsp; / &nbsp; 5 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="article-detail.html?id=directional-valve"
+                          >Пять ошибок при выборе пневмораспределителя</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                        ><a href="articles.html?tag=Обучение">#Обучение</a>
+                      </div>
+                      <time datetime="2026-09-15">15 сентября 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/production-line.png"
+                    width="387"
+                    height="220"
+                    alt="Автоматизированная производственная линия с роботами"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Статья &nbsp; / &nbsp; 4 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="article-detail.html?id=production-line"
+                          >Автоматизация производственной линии: шаг за шагом</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                        ><a href="articles.html?tag=Практика">#Практика</a>
+                      </div>
+                      <time datetime="2026-09-10">10 сентября 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/pneumatic-diagram.png"
+                    width="387"
+                    height="220"
+                    alt="Структура пневматической системы"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Статья &nbsp; / &nbsp; 4 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="article-detail.html?id=pneumatic-diagram"
+                          >Как читать пневматические схемы</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                        ><a href="articles.html?tag=Обучение">#Обучение</a>
+                      </div>
+                      <time datetime="2026-09-05">5 сентября 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/pneumatic-maintenance.png"
+                    width="387"
+                    height="220"
+                    alt="Инженер проверяет пневмосистему на производстве"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Статья &nbsp; / &nbsp; 5 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a
+                          class="media-card-link"
+                          href="article-detail.html?id=pneumatic-maintenance"
+                          >Обслуживание пневмосистем: чек-лист инженера</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                        ><a href="articles.html?tag=Обучение">#Обучение</a>
+                      </div>
+                      <time datetime="2026-09-01">1 сентября 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <p class="media-load-status" id="articles-status" role="status" hidden></p>
+
+            <!-- Подгрузка материалов и переключение страниц -->
+            <div class="list-actions">
+              <button
+                class="btn btn-outline"
+                type="button"
+                id="articles-load-more"
+                aria-controls="articles-grid"
+              >
+                Загрузить ещё
+              </button>
+              <nav class="pagination" id="articles-pagination" aria-label="Страницы статей">
+                <a
+                  class="pagination-item active"
+                  href="articles.html"
+                  aria-current="page"
+                  aria-label="Страница 1"
+                  >1</a
+                ><a class="pagination-item" href="articles.html?page=2" aria-label="Страница 2">2</a
+                ><a class="pagination-item" href="articles.html?page=3" aria-label="Страница 3">3</a
+                ><span class="pagination-dots">...</span
+                ><a class="pagination-item" href="articles.html?page=5" aria-label="Страница 5"
+                  >5</a
+                >
+              </nav>
+            </div>
+            <noscript
+              ><p>Для тестовой фильтрации и переключения страниц включите JavaScript.</p></noscript
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

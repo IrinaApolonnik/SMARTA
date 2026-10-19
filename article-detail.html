@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Пять шагов подбора пневмоцилиндра: задача, усилие, диаметр, условия работы, крепления и датчики."
+    />
+    <title>Как подобрать пневмоцилиндр под вашу задачу | SMARTA</title>
+    <link
+      rel="preload"
+      href="assets/fonts/smarta-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/smarta-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/news-detail.css" />
+    <link rel="stylesheet" href="assets/css/article-detail.css" />
+    <script src="assets/js/news-detail.js" defer></script>
+    <script src="assets/js/article-detail.js" defer></script>
+  </head>
+  <body>
+    <a class="media-skip-link" href="#main-content">Перейти к содержимому</a>
+    <main class="media media-article-detail" id="main-content">
+      <!-- Медиапортал: заголовок и навигация по разделам -->
+      <section class="media-hero" aria-labelledby="media-title">
+        <div class="container">
+          <div class="media-hero-head">
+            <div class="media-hero-title" id="media-title">
+              <a href="mediaportal.html">Медиапортал</a>
+            </div>
+            <p>
+              Интерактивное цифровое пространство, объединяющее ключевые медиаресурсы нашей
+              экосистемы
+            </p>
+          </div>
+          <nav class="media-tabs" aria-label="Разделы медиапортала">
+            <a class="media-tabs-item" href="news.html">Новости</a>
+            <a
+              class="media-tabs-item"
+              aria-disabled="true"
+              title="Раздел видео не входит в текущий этап"
+              >Видео</a
+            >
+            <a class="media-tabs-item active" href="articles.html" aria-current="page">Статьи</a>
+            <a
+              class="media-tabs-item"
+              aria-disabled="true"
+              title="Раздел файлов не входит в текущий этап"
+              >Файлы</a
+            >
+          </nav>
+        </div>
+      </section>
+
+      <!-- Статья: заголовок, вступление и иллюстрация -->
+      <section class="article-hero" aria-labelledby="article-heading">
+        <div class="container">
+          <!-- Хлебные крошки -->
+          <nav class="media-breadcrumb" aria-label="Хлебные крошки">
+            <ol>
+              <li><a href="https://smarta.ru/">Главная</a></li>
+              <li><a href="mediaportal.html">Медиапортал</a></li>
+              <li><a href="articles.html">Статьи</a></li>
+              <li aria-current="page">Как подобрать пневмоцилиндр под вашу задачу</li>
+            </ol>
+          </nav>
+          <div class="article-hero-layout">
+            <header class="article-hero-text">
+              <h1 id="article-heading">Как подобрать пневмоцилиндр под вашу задачу</h1>
+              <p>
+                Пять шагов, которые помогут выбрать тип, диаметр, ход и крепление цилиндра без
+                лишнего запаса и переплаты.
+              </p>
+            </header>
+            <img
+              src="assets/images/pneumatic-cylinders.png"
+              width="280"
+              height="210"
+              alt="Типы пневмоцилиндров SMARTA"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Статья: основной текст и содержание -->
+      <div class="article-detail">
+        <div class="container article-layout">
+          <article class="article-body" aria-labelledby="article-heading">
+            <!-- Раздел статьи -->
+            <section class="article-section" id="task" aria-labelledby="task-heading">
+              <h2 id="task-heading">1. Определите задачу</h2>
+              <p>
+                Начните с того, что именно должен делать цилиндр: толкать, тянуть, прижимать или
+                удерживать груз. От этого зависят тип цилиндра, схема управления и запас по усилию.
+              </p>
+              <ul>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span
+                    >Одностороннего действия: возврат пружиной, подходит для коротких ходов и
+                    простого зажима</span
+                  >
+                </li>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span
+                    >Двустороннего действия: усилие в обе стороны, основной выбор для большинства
+                    задач</span
+                  >
+                </li>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span
+                    >С направляющими или проходным штоком: когда на шток действует боковая
+                    нагрузка</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <!-- Раздел статьи -->
+            <section class="article-section" id="force" aria-labelledby="force-heading">
+              <h2 id="force-heading">2. Рассчитайте усилие</h2>
+              <p>
+                Теоретическое усилие равно давлению, умноженному на площадь поршня. На практике
+                из-за трения и колебаний давления в сети закладывайте запас.
+              </p>
+              <div class="formula">
+                <p>F = p × π × D² / 4</p>
+                <small>F — усилие, Н; p — давление, МПа; D — диаметр поршня, мм</small>
+              </div>
+              <aside class="note">
+                <strong>На заметку</strong>
+                <p class="note-text">
+                  Для динамических нагрузок берите запас 50–100%, для статических, например прижима,
+                  достаточно 25%.
+                </p>
+              </aside>
+            </section>
+            <!-- Раздел статьи -->
+            <section class="article-section" id="diameter" aria-labelledby="diameter-heading">
+              <h2 id="diameter-heading">3. Выберите диаметр и ход</h2>
+              <p>
+                Ниже усилия стандартных цилиндров ISO 15552 при давлении 6 бар. Ход выбирайте с
+                запасом 5–10 мм, чтобы поршень не бил в крышку.
+              </p>
+              <div
+                class="params-scroll"
+                tabindex="0"
+                role="region"
+                aria-label="Усилия цилиндров при давлении 6 бар"
+              >
+                <table class="params">
+                  <thead>
+                    <tr>
+                      <th scope="col">Диаметр, мм</th>
+                      <th scope="col">Шток, мм</th>
+                      <th scope="col">Толкание, Н</th>
+                      <th scope="col">Втягивание, Н</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">32</th>
+                      <td>12</td>
+                      <td>482</td>
+                      <td>415</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">40</th>
+                      <td>16</td>
+                      <td>754</td>
+                      <td>633</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">50</th>
+                      <td>20</td>
+                      <td>1 178</td>
+                      <td>990</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">63</th>
+                      <td>20</td>
+                      <td>1 870</td>
+                      <td>1 682</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">80</th>
+                      <td>25</td>
+                      <td>3 016</td>
+                      <td>2 721</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <!-- Раздел статьи -->
+            <section class="article-section" id="conditions" aria-labelledby="conditions-heading">
+              <h2 id="conditions-heading">4. Учтите условия работы</h2>
+              <ul>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span
+                    >Температура ниже −20 °C или выше +80 °C: нужны специальные уплотнения</span
+                  >
+                </li>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span>Пыль, стружка, СОЖ: выбирайте цилиндр со скребком штока</span>
+                </li>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span
+                    >Высокая скорость или тяжёлый груз: регулируемое демпфирование в конце
+                    хода</span
+                  >
+                </li>
+              </ul>
+            </section>
+            <!-- Раздел статьи -->
+            <section class="article-section" id="mounting" aria-labelledby="mounting-heading">
+              <h2 id="mounting-heading">5. Подберите крепления и датчики</h2>
+              <p>
+                Крепление определяет, как цилиндр передаёт усилие на конструкцию. Для качающихся
+                узлов нужна задняя цапфа или шарнир, для жёстких — фланец или лапы. Датчики
+                положения на магнитном поршне сообщают контроллеру, что шток дошёл до конца хода.
+              </p>
+            </section>
+            <!-- Краткие выводы статьи -->
+            <section class="article-summary" id="summary" aria-labelledby="summary-heading">
+              <h2 id="summary-heading">Коротко</h2>
+              <ul>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span>Определите тип движения и нагрузку</span>
+                </li>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span>Рассчитайте усилие с запасом 25–100%</span>
+                </li>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span>Выберите диаметр по таблице, а ход с запасом 5–10 мм</span>
+                </li>
+                <li>
+                  <img
+                    src="assets/icons/bullet.svg"
+                    width="6"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  /><span>Учтите среду, скорость и способ крепления</span>
+                </li>
+              </ul>
+            </section>
+            <!-- Теги публикации и ссылки «Поделиться» -->
+            <footer class="article-footer">
+              <div class="media-tags">
+                <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                ><a href="articles.html?tag=Практика">#Практика</a>
+              </div>
+              <div class="share">
+                <span>Поделиться</span
+                ><a
+                  class="social-link"
+                  data-share="vk"
+                  href="https://vk.com/share.php"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Поделиться во ВКонтакте"
+                  ><svg width="24" height="24" aria-hidden="true">
+                    <use href="assets/icons/smarta-sprite.svg#brands-vk"></use></svg></a
+                ><a
+                  class="social-link"
+                  data-share="telegram"
+                  href="https://t.me/share/url"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Поделиться в Telegram"
+                  ><svg width="24" height="24" aria-hidden="true">
+                    <use href="assets/icons/smarta-sprite.svg#brands-telegram"></use></svg></a
+                ><button
+                  class="social-link share-copy"
+                  type="button"
+                  id="share-copy"
+                  aria-label="Скопировать ссылку на статью"
+                >
+                  <img
+                    src="assets/icons/share-link.svg"
+                    width="16"
+                    height="16"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+            </footer>
+            <p class="detail-status" id="share-status" role="status" hidden></p>
+          </article>
+          <!-- Содержание и помощь с подбором; адаптивное положение задаётся в CSS -->
+          <aside class="toc">
+            <nav class="toc-box" aria-label="Содержание статьи">
+              <h2>Содержание</h2>
+              <button
+                class="toc-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="article-toc-list"
+              >
+                Содержание
+              </button>
+              <ol class="toc-list" id="article-toc-list">
+                <li>
+                  <a class="toc-item active" href="#task" aria-current="location"
+                    >1. Определите задачу</a
+                  >
+                </li>
+                <li><a class="toc-item" href="#force">2. Рассчитайте усилие</a></li>
+                <li><a class="toc-item" href="#diameter">3. Выберите диаметр и ход</a></li>
+                <li><a class="toc-item" href="#conditions">4. Учтите условия работы</a></li>
+                <li><a class="toc-item" href="#mounting">5. Подберите крепления и датчики</a></li>
+                <li><a class="toc-item" href="#summary">Коротко</a></li>
+              </ol>
+            </nav>
+            <div class="help-card">
+              <strong>Нужна помощь с подбором?</strong>
+              <p>Инженеры SMARTA подберут изделия под вашу задачу.</p>
+              <a class="btn btn-outline" href="https://smarta.ru/contact/">Задать вопрос</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Связанные товары и категории каталога -->
+      <section class="related" aria-label="Связанные товары и категории">
+        <div class="container">
+          <div class="related-products">
+            <h2>Связанные товары</h2>
+            <div class="product-grid">
+              <article class="product-card">
+                <div class="card-box">
+                  <div class="card-image">
+                    <a href="https://smarta.ru/product/30002663/" target="_blank" rel="noopener"
+                      ><img
+                        src="assets/images/cylinder.png"
+                        width="128"
+                        height="128"
+                        alt="Пневмоцилиндр по ISO 15552 FVBC32×50-S"
+                        loading="lazy"
+                    /></a>
+                  </div>
+                  <div class="card-content">
+                    <div class="content-caption">
+                      <a
+                        class="caption-label"
+                        href="https://smarta.ru/product/30002663/"
+                        target="_blank"
+                        rel="noopener"
+                        ><span class="name-title">Пневмоцилиндр по ISO 15552</span
+                        ><span class="name-code">FVBC32×50-S</span></a
+                      >
+                      <div class="caption-info">
+                        <div class="info-number">
+                          <span class="number-label">Номер для заказа:</span>
+                          <div class="info-number-data">
+                            <button
+                              type="button"
+                              class="product-copy"
+                              data-copy="30002663"
+                              aria-label="Скопировать номер 30002663"
+                            >
+                              <img
+                                src="assets/icons/copy.svg"
+                                width="14"
+                                height="14"
+                                alt=""
+                                aria-hidden="true"
+                              /></button
+                            ><span>30002663</span>
+                          </div>
+                        </div>
+                        <div class="info-available">
+                          <span>Наличие:</span><span class="info-available-data">229 шт</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="content-basket">
+                      <div class="block-price">
+                        <span>Цена:</span><span class="block-price-data">2 889.60 ₽</span>
+                      </div>
+                      <div class="basket-action">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-soft"
+                          data-demo-cart="30002663"
+                          aria-label="Добавить FVBC32×50-S в тестовую корзину"
+                        >
+                          В корзину</button
+                        ><button
+                          type="button"
+                          class="btn btn-primary btn-soft btn-equal"
+                          data-demo-info="Документация FVBC32×50-S будет подключена при интеграции каталога."
+                          aria-label="Документация FVBC32×50-S"
+                        >
+                          <img
+                            src="assets/icons/document.svg"
+                            width="14"
+                            height="14"
+                            alt=""
+                            aria-hidden="true"
+                          /></button
+                        ><button
+                          type="button"
+                          class="btn btn-primary btn-soft btn-equal btn-3d"
+                          data-demo-info="3D-модель FVBC32×50-S будет подключена при интеграции каталога."
+                          aria-label="3D-модель FVBC32×50-S"
+                        >
+                          3D
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="card-box">
+                  <div class="card-image">
+                    <a href="https://smarta.ru/product/30002665/" target="_blank" rel="noopener"
+                      ><img
+                        src="assets/images/cylinder.png"
+                        width="128"
+                        height="128"
+                        alt="Пневмоцилиндр по ISO 15552 FVBC32×100-S"
+                        loading="lazy"
+                    /></a>
+                  </div>
+                  <div class="card-content">
+                    <div class="content-caption">
+                      <a
+                        class="caption-label"
+                        href="https://smarta.ru/product/30002665/"
+                        target="_blank"
+                        rel="noopener"
+                        ><span class="name-title">Пневмоцилиндр по ISO 15552</span
+                        ><span class="name-code">FVBC32×100-S</span></a
+                      >
+                      <div class="caption-info">
+                        <div class="info-number">
+                          <span class="number-label">Номер для заказа:</span>
+                          <div class="info-number-data">
+                            <button
+                              type="button"
+                              class="product-copy"
+                              data-copy="30002665"
+                              aria-label="Скопировать номер 30002665"
+                            >
+                              <img
+                                src="assets/icons/copy.svg"
+                                width="14"
+                                height="14"
+                                alt=""
+                                aria-hidden="true"
+                              /></button
+                            ><span>30002665</span>
+                          </div>
+                        </div>
+                        <div class="info-available">
+                          <span>Наличие:</span><span class="info-available-data">96 шт</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="content-basket">
+                      <div class="block-price">
+                        <span>Цена:</span><span class="block-price-data">3 181.20 ₽</span>
+                      </div>
+                      <div class="basket-action">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-soft"
+                          data-demo-cart="30002665"
+                          aria-label="Добавить FVBC32×100-S в тестовую корзину"
+                        >
+                          В корзину</button
+                        ><button
+                          type="button"
+                          class="btn btn-primary btn-soft btn-equal"
+                          data-demo-info="Документация FVBC32×100-S будет подключена при интеграции каталога."
+                          aria-label="Документация FVBC32×100-S"
+                        >
+                          <img
+                            src="assets/icons/document.svg"
+                            width="14"
+                            height="14"
+                            alt=""
+                            aria-hidden="true"
+                          /></button
+                        ><button
+                          type="button"
+                          class="btn btn-primary btn-soft btn-equal btn-3d"
+                          data-demo-info="3D-модель FVBC32×100-S будет подключена при интеграции каталога."
+                          aria-label="3D-модель FVBC32×100-S"
+                        >
+                          3D
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="card-box">
+                  <div class="card-image">
+                    <a href="https://smarta.ru/product/30014020/" target="_blank" rel="noopener"
+                      ><img
+                        src="assets/images/cylinder-long.png"
+                        width="128"
+                        height="128"
+                        alt="Пневмоцилиндр по ISO 15552 FVBC32×160-S"
+                        loading="lazy"
+                    /></a>
+                  </div>
+                  <div class="card-content">
+                    <div class="content-caption">
+                      <a
+                        class="caption-label"
+                        href="https://smarta.ru/product/30014020/"
+                        target="_blank"
+                        rel="noopener"
+                        ><span class="name-title">Пневмоцилиндр по ISO 15552</span
+                        ><span class="name-code">FVBC32×160-S</span></a
+                      >
+                      <div class="caption-info">
+                        <div class="info-number">
+                          <span class="number-label">Номер для заказа:</span>
+                          <div class="info-number-data">
+                            <button
+                              type="button"
+                              class="product-copy"
+                              data-copy="30014020"
+                              aria-label="Скопировать номер 30014020"
+                            >
+                              <img
+                                src="assets/icons/copy.svg"
+                                width="14"
+                                height="14"
+                                alt=""
+                                aria-hidden="true"
+                              /></button
+                            ><span>30014020</span>
+                          </div>
+                        </div>
+                        <div class="info-available">
+                          <span>Наличие:</span><span class="info-available-data">95 шт</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="content-basket">
+                      <div class="block-price">
+                        <span>Цена:</span><span class="block-price-data">3 616.80 ₽</span>
+                      </div>
+                      <div class="basket-action">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-soft"
+                          data-demo-cart="30014020"
+                          aria-label="Добавить FVBC32×160-S в тестовую корзину"
+                        >
+                          В корзину</button
+                        ><button
+                          type="button"
+                          class="btn btn-primary btn-soft btn-equal"
+                          data-demo-info="Документация FVBC32×160-S будет подключена при интеграции каталога."
+                          aria-label="Документация FVBC32×160-S"
+                        >
+                          <img
+                            src="assets/icons/document.svg"
+                            width="14"
+                            height="14"
+                            alt=""
+                            aria-hidden="true"
+                          /></button
+                        ><button
+                          type="button"
+                          class="btn btn-primary btn-soft btn-equal btn-3d"
+                          data-demo-info="3D-модель FVBC32×160-S будет подключена при интеграции каталога."
+                          aria-label="3D-модель FVBC32×160-S"
+                        >
+                          3D
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="card-box">
+                  <div class="card-image">
+                    <a href="https://smarta.ru/product/30002692/" target="_blank" rel="noopener"
+                      ><img
+                        src="assets/images/cylinder-long.png"
+                        width="128"
+                        height="128"
+                        alt="Пневмоцилиндр по ISO 15552 FVBC40×50-S"
+                        loading="lazy"
+                    /></a>
+                  </div>
+                  <div class="card-content">
+                    <div class="content-caption">
+                      <a
+                        class="caption-label"
+                        href="https://smarta.ru/product/30002692/"
+                        target="_blank"
+                        rel="noopener"
+                        ><span class="name-title">Пневмоцилиндр по ISO 15552</span
+                        ><span class="name-code">FVBC40×50-S</span></a
+                      >
+                      <div class="caption-info">
+                        <div class="info-number">
+                          <span class="number-label">Номер для заказа:</span>
+                          <div class="info-number-data">
+                            <button
+                              type="button"
+                              class="product-copy"
+                              data-copy="30002692"
+                              aria-label="Скопировать номер 30002692"
+                            >
+                              <img
+                                src="assets/icons/copy.svg"
+                                width="14"
+                                height="14"
+                                alt=""
+                                aria-hidden="true"
+                              /></button
+                            ><span>30002692</span>
+                          </div>
+                        </div>
+                        <div class="info-available">
+                          <span>Наличие:</span><span class="info-available-data">107 шт</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="content-basket">
+                      <div class="block-price">
+                        <span>Цена:</span><span class="block-price-data">3 756.00 ₽</span>
+                      </div>
+                      <div class="basket-action">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-soft"
+                          data-demo-cart="30002692"
+                          aria-label="Добавить FVBC40×50-S в тестовую корзину"
+                        >
+                          В корзину</button
+                        ><button
+                          type="button"
+                          class="btn btn-primary btn-soft btn-equal"
+                          data-demo-info="Документация FVBC40×50-S будет подключена при интеграции каталога."
+                          aria-label="Документация FVBC40×50-S"
+                        >
+                          <img
+                            src="assets/icons/document.svg"
+                            width="14"
+                            height="14"
+                            alt=""
+                            aria-hidden="true"
+                          /></button
+                        ><button
+                          type="button"
+                          class="btn btn-primary btn-soft btn-equal btn-3d"
+                          data-demo-info="3D-модель FVBC40×50-S будет подключена при интеграции каталога."
+                          aria-label="3D-модель FVBC40×50-S"
+                        >
+                          3D
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <p id="product-status" class="detail-status" role="status" hidden></p>
+          </div>
+          <div class="related-categories">
+            <h2>Связанные категории</h2>
+            <div class="category-grid">
+              <a
+                class="category-card"
+                href="https://smarta.ru/catalog/pnevmoavtomatika/pnevmoprivody/pnevmotsilindry/pnevmotsilindry_po_iso_15552/"
+                ><img
+                  src="assets/images/cylinder.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  loading="lazy"
+                /><span class="category-card-text"
+                  ><strong>Пневмоцилиндры по ISO 15552</strong><small>186 товаров</small></span
+                ></a
+              ><a class="category-card" href="https://smarta.ru/catalog/pnevmoavtomatika/"
+                ><img
+                  src="assets/images/valve-category.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  loading="lazy"
+                /><span class="category-card-text"
+                  ><strong>Пневмораспределители</strong><small>240 товаров</small></span
+                ></a
+              ><a
+                class="category-card"
+                href="https://smarta.ru/catalog/pnevmoavtomatika/datchiki/datchiki_davleniya/"
+                ><img
+                  src="assets/images/pressure.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  loading="lazy"
+                /><span class="category-card-text"
+                  ><strong>Датчики давления</strong><small>54 товара</small></span
+                ></a
+              ><a
+                class="category-card"
+                href="https://smarta.ru/catalog/pnevmoavtomatika/pnevmoprivody/zakhvaty_pnevmaticheskie/"
+                ><img
+                  src="assets/images/gripper.png"
+                  width="48"
+                  height="48"
+                  alt=""
+                  loading="lazy"
+                /><span class="category-card-text"
+                  ><strong>Захваты пневматические</strong><small>36 товаров</small></span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Рекомендованные статьи -->
+      <section class="related-articles" aria-labelledby="read-more">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="read-more">Читайте также</h2>
+            <a class="link-more" href="articles.html"
+              >Все статьи
+              <img
+                src="assets/icons/arrow-right.svg"
+                width="16"
+                height="11.9945"
+                alt=""
+                aria-hidden="true"
+            /></a>
+          </div>
+          <!-- Карточки публикаций -->
+          <div class="card-grid">
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="assets/images/production-line.png"
+                  width="387"
+                  height="220"
+                  alt="Автоматизированная производственная линия с роботами"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Статья &nbsp; / &nbsp; 4 мин чтения</p>
+                    <h2 class="media-card-title">
+                      <a class="media-card-link" href="article-detail.html?id=production-line"
+                        >Автоматизация производственной линии: шаг за шагом</a
+                      >
+                    </h2>
+                  </div>
+                  <div class="card-footer">
+                    <div class="media-tags">
+                      <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                      ><a href="articles.html?tag=Практика">#Практика</a>
+                    </div>
+                    <time datetime="2026-09-10">10 сентября 2026</time>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="assets/images/pneumatic-diagram.png"
+                  width="387"
+                  height="220"
+                  alt="Структура пневматической системы"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Статья &nbsp; / &nbsp; 4 мин чтения</p>
+                    <h2 class="media-card-title">
+                      <a class="media-card-link" href="article-detail.html?id=pneumatic-diagram"
+                        >Как читать пневматические схемы</a
+                      >
+                    </h2>
+                  </div>
+                  <div class="card-footer">
+                    <div class="media-tags">
+                      <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                      ><a href="articles.html?tag=Обучение">#Обучение</a>
+                    </div>
+                    <time datetime="2026-09-05">5 сентября 2026</time>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="assets/images/pneumatic-maintenance.png"
+                  width="387"
+                  height="220"
+                  alt="Инженер проверяет пневмосистему на производстве"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Статья &nbsp; / &nbsp; 5 мин чтения</p>
+                    <h2 class="media-card-title">
+                      <a class="media-card-link" href="article-detail.html?id=pneumatic-maintenance"
+                        >Обслуживание пневмосистем: чек-лист инженера</a
+                      >
+                    </h2>
+                  </div>
+                  <div class="card-footer">
+                    <div class="media-tags">
+                      <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                      ><a href="articles.html?tag=Обучение">#Обучение</a>
+                    </div>
+                    <time datetime="2026-09-01">1 сентября 2026</time>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

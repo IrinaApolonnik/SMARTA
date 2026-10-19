@@ -1,0 +1,50 @@
+/* Базовые правила документа и доступность. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+img,
+svg,
+video {
+  max-width: 100%;
+}
+img {
+  height: auto;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 4px;
+}
+.container {
+  width: 100%;
+  min-width: 0;
+  padding: 24px 16px;
+  overflow-wrap: anywhere;
+}
+.media-skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 8px 12px;
+  background: white;
+  transform: translateY(-200%);
+  z-index: 100;
+}
+.media-skip-link:focus {
+  transform: translateY(0);
+}

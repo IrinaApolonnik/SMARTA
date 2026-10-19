@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Медиапортал SMARTA: новости компании, события отрасли и практические статьи о промышленной автоматизации."
+    />
+    <title>Новости | SMARTA</title>
+    <link
+      rel="preload"
+      href="assets/fonts/smarta-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/smarta-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <script src="assets/js/news-data.js" defer></script>
+    <script src="assets/js/media-list.js" defer></script>
+  </head>
+  <body>
+    <a class="media-skip-link" href="#main-content">Перейти к содержимому</a>
+    <!-- Общая шапка и подвал сайта не входят в объём вёрстки. -->
+    <main class="media media-news" id="main-content">
+      <!-- Медиапортал: заголовок и навигация по разделам -->
+      <section class="media-hero" aria-labelledby="media-title">
+        <div class="container">
+          <div class="media-hero-head">
+            <div class="media-hero-title" id="media-title">
+              <a href="mediaportal.html">Медиапортал</a>
+            </div>
+            <p>
+              Интерактивное цифровое пространство, объединяющее ключевые медиаресурсы нашей
+              экосистемы
+            </p>
+          </div>
+          <nav class="media-tabs" aria-label="Разделы медиапортала">
+            <a class="media-tabs-item active" href="news.html" aria-current="page">Новости</a>
+            <a
+              class="media-tabs-item"
+              aria-disabled="true"
+              title="Раздел видео не входит в текущий этап"
+              >Видео</a
+            >
+            <a class="media-tabs-item" href="articles.html">Статьи</a>
+            <a
+              class="media-tabs-item"
+              aria-disabled="true"
+              title="Раздел файлов не входит в текущий этап"
+              >Файлы</a
+            >
+          </nav>
+        </div>
+      </section>
+
+      <!-- Список публикаций: навигация, фильтры и карточки -->
+      <section class="news-list" aria-labelledby="news-title">
+        <div class="container">
+          <!-- Хлебные крошки -->
+          <nav class="media-breadcrumb" aria-label="Хлебные крошки">
+            <ol>
+              <li><a href="https://smarta.ru/">Главная</a></li>
+              <li><a href="mediaportal.html">Медиапортал</a></li>
+              <li aria-current="page">Новости</li>
+            </ol>
+          </nav>
+          <div class="page-title">
+            <h1 id="news-title">Новости</h1>
+            <p id="news-count">48 новостей</p>
+          </div>
+          <div class="media-content">
+            <!-- Фильтр публикаций по хэштегам -->
+            <nav class="tag-list media-tags" aria-label="Фильтр новостей по хэштегам">
+              <a href="news.html?tag=2026" data-list-tag="2026">#2026</a
+              ><a href="news.html?tag=2025" data-list-tag="2025">#2025</a
+              ><a href="news.html?tag=MiningWorldRussia" data-list-tag="MiningWorldRussia"
+                >#MiningWorldRussia</a
+              ><a href="news.html?tag=Агропродмаш" data-list-tag="Агропродмаш">#Агропродмаш</a
+              ><a href="news.html?tag=Адрес" data-list-tag="Адрес">#Адрес</a
+              ><a href="news.html?tag=Выставки" data-list-tag="Выставки">#Выставки</a
+              ><a href="news.html?tag=МЕТАЛЛООБРАБОТКА" data-list-tag="МЕТАЛЛООБРАБОТКА"
+                >#МЕТАЛЛООБРАБОТКА</a
+              ><a href="news.html?tag=Семинар" data-list-tag="Семинар">#Семинар</a
+              ><a href="news.html?tag=СМАРТА" data-list-tag="СМАРТА">#СМАРТА</a
+              ><a href="news.html?tag=УгольРоссииМайнинг" data-list-tag="УгольРоссииМайнинг"
+                >#УгольРоссииМайнинг</a
+              ><a href="news.html?tag=Челябинск" data-list-tag="Челябинск">#Челябинск</a
+              ><a href="news.html" id="reset-filter" hidden>Сбросить фильтр</a>
+            </nav>
+
+            <!-- Карточки публикаций -->
+            <div class="card-grid" id="news-grid">
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/agroprodmash-2026.png"
+                    width="387"
+                    height="220"
+                    alt="Приглашение на выставку Агропродмаш 2026"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Новость &nbsp; / &nbsp; 5 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="news-detail.html?id=agroprodmash-2026"
+                          >Приглашаем вас посетить наш стенд на выставке Агропродмаш 2026</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="news.html?tag=Выставки">#Выставки</a
+                        ><a href="news.html?tag=Агропродмаш">#Агропродмаш</a
+                        ><a href="news.html?tag=2026">#2026</a>
+                      </div>
+                      <time datetime="2026-09-01">1 сентября 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/company-address.png"
+                    width="387"
+                    height="220"
+                    alt="SMART Автоматизация сообщает о смене адреса"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Новость &nbsp; / &nbsp; 1 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="news-detail.html?id=company-address"
+                          >С 25.06.2026 изменился юридический адрес и КПП</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="news.html?tag=СМАРТА">#СМАРТА</a
+                        ><a href="news.html?tag=Адрес">#Адрес</a>
+                      </div>
+                      <time datetime="2026-05-27">27 мая 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/coal-mining-2026.png"
+                    width="387"
+                    height="220"
+                    alt="Приглашение на выставку Уголь России и Майнинг 2026"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Новость &nbsp; / &nbsp; 2 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="news-detail.html?id=coal-mining-2026"
+                          >Приглашаем вас посетить наш стенд на выставке Уголь России и Майнинг
+                          2026</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="news.html?tag=Выставки">#Выставки</a
+                        ><a href="news.html?tag=УгольРоссииМайнинг">#УгольРоссииМайнинг</a
+                        ><a href="news.html?tag=2026">#2026</a>
+                      </div>
+                      <time datetime="2026-05-27">27 мая 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/metalloobrabotka-news.png"
+                    width="387"
+                    height="220"
+                    alt="Стенд SMARTA на выставке Металлообработка"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Новость &nbsp; / &nbsp; 2 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="news-detail.html?id=metalloobrabotka-2026"
+                          >МЕТАЛЛООБРАБОТКА-2026: Итоги выставки</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="news.html?tag=Выставки">#Выставки</a
+                        ><a href="news.html?tag=МЕТАЛЛООБРАБОТКА">#МЕТАЛЛООБРАБОТКА</a
+                        ><a href="news.html?tag=2026">#2026</a>
+                      </div>
+                      <time datetime="2026-04-21">21 апреля 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/seminar-chelyabinsk.png"
+                    width="387"
+                    height="220"
+                    alt="Бесплатный семинар SMART Автоматизации в Челябинске"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Новость &nbsp; / &nbsp; 4 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="news-detail.html?id=seminar-chelyabinsk"
+                          >Бесплатный семинар от &quot;СМАРТ Автоматизации&quot; 17 и 18 февраля в
+                          Челябинске</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="news.html?tag=Семинар">#Семинар</a
+                        ><a href="news.html?tag=Челябинск">#Челябинск</a
+                        ><a href="news.html?tag=2026">#2026</a>
+                      </div>
+                      <time datetime="2026-02-11">11 февраля 2026</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-media">
+                  <img
+                    src="assets/images/miningworld-2025.png"
+                    width="387"
+                    height="220"
+                    alt="Приглашение на выставку MiningWorld Russia 2025"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <div class="card-content">
+                    <div class="card-head">
+                      <p class="media-card-meta">Новость &nbsp; / &nbsp; 3 мин чтения</p>
+                      <h2 class="media-card-title">
+                        <a class="media-card-link" href="news-detail.html?id=miningworld-2025"
+                          >Приглашаем вас посетить наш стенд на выставке MiningWorld Russia 2025</a
+                        >
+                      </h2>
+                    </div>
+                    <div class="card-footer">
+                      <div class="media-tags">
+                        <a href="news.html?tag=Выставки">#Выставки</a
+                        ><a href="news.html?tag=MiningWorldRussia">#MiningWorldRussia</a
+                        ><a href="news.html?tag=2025">#2025</a>
+                      </div>
+                      <time datetime="2025-03-26">26 марта 2025</time>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <p class="media-load-status" id="news-status" role="status" hidden></p>
+
+            <!-- Подгрузка материалов и переключение страниц -->
+            <div class="list-actions">
+              <button
+                class="btn btn-outline"
+                type="button"
+                id="news-load-more"
+                aria-controls="news-grid"
+              >
+                Загрузить ещё
+              </button>
+              <nav class="pagination" id="news-pagination" aria-label="Страницы новостей">
+                <a
+                  class="pagination-item active"
+                  href="news.html"
+                  aria-current="page"
+                  aria-label="Страница 1"
+                  >1</a
+                ><a class="pagination-item" href="news.html?page=2" aria-label="Страница 2">2</a
+                ><a class="pagination-item" href="news.html?page=3" aria-label="Страница 3">3</a
+                ><span class="pagination-dots">...</span
+                ><a class="pagination-item" href="news.html?page=8" aria-label="Страница 8">8</a>
+              </nav>
+            </div>
+            <noscript
+              ><p>Для тестовой фильтрации и переключения страниц включите JavaScript.</p></noscript
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

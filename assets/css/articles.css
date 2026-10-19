@@ -1,0 +1,93 @@
+/* Сетка и отступы списка общие с новостями: .article-list в pages.css.
+   Не переопределяем gap и row-gap для статей, чтобы списки совпадали. */
+.media-articles {
+  min-width: 1272px;
+}
+
+/* Планшетный список статей: Figma 5460:2, контейнер 704 px на 768 px. */
+@media (min-width: 768px) and (max-width: 1271.98px) {
+  .media-articles {
+    min-width: 0;
+  }
+  .media-articles .container {
+    width: calc(100% - 64px);
+  }
+  .media-articles .media-hero {
+    padding-top: 24px;
+  }
+  .media-articles .media-hero-head {
+    width: 100%;
+  }
+  .media-articles .media-hero-title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .media-articles .article-list .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .media-articles .card-media > img {
+    aspect-ratio: 340 / 193;
+  }
+  .media-articles .card-body {
+    min-height: 188px;
+  }
+}
+
+/* Мобильный список статей: Figma 5460:456. */
+@media (max-width: 767.98px) {
+  .media-articles {
+    min-width: 0;
+  }
+  .media-articles .container {
+    width: calc(100% - 32px);
+  }
+  .media-articles .media-hero {
+    padding-top: 24px;
+  }
+  .media-articles .media-hero-head {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .media-articles .media-hero-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .media-articles .media-hero-head p {
+    flex: none;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .media-articles .media-tabs {
+    flex-wrap: nowrap;
+  }
+  .media-articles .media-tabs-item {
+    min-width: 0;
+    padding: 12px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  .media-articles .article-list {
+    padding-block: 32px;
+  }
+  .media-articles .page-title h1 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .media-articles .article-list .card-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .media-articles .card-media > img {
+    aspect-ratio: 358 / 204;
+  }
+  .media-articles .card-body {
+    min-height: 0;
+  }
+  .media-articles .article-list .card-content:where(.card .card-content) {
+    gap: 24px;
+  }
+}
