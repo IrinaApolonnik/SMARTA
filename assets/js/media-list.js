@@ -1,6 +1,6 @@
 'use strict';
 
-// Общий список: фильтр по URL, карточки, подгрузка и активная страница при прокрутке.
+// Общий список: фильтр по URL, карточки, подгрузка и активная страница при прокрутке
 
 (() => {
   const isArticles = Boolean(document.querySelector('.media-articles'));
@@ -15,7 +15,16 @@
   const pageSize = 6;
   const params = new URLSearchParams(location.search);
   const tag = params.get('tag') || '';
-  const records = source.filter((item) => !tag || item.tags.includes(tag));
+  // Пустые необязательные поля пропускаем; без заголовка и ссылки карточку не показываются.
+  const hasValue = (value) => value !== null && value !== undefined && String(value).trim() !== '';
+  const getTags = (item) => (Array.isArray(item.tags) ? item.tags.filter(hasValue) : []);
+  const records = source.filter(
+    (item) =>
+      item &&
+      hasValue(item.title) &&
+      (hasValue(item.id) || hasValue(item.href)) &&
+      (!tag || getTags(item).includes(tag)),
+  );
   const pageCount = Math.ceil(records.length / pageSize);
   const requestedPage = Number(params.get('page'));
   const page = Math.min(
@@ -29,7 +38,7 @@
   const status = document.querySelector('#' + prefix + '-status');
   const pagination = document.querySelector('#' + prefix + '-pagination');
   const escape = (value) =>
-    String(value)
+    String(value ?? '')
       .replaceAll('&', '&amp;')
       .replaceAll('<', '&lt;')
       .replaceAll('>', '&gt;')
@@ -40,13 +49,42 @@
     if (targetPage > 1) query.set('page', targetPage);
     return prefix + '.html' + (query.size ? '?' + query : '');
   }
+  // Разметка одной карточки для фильтрации и кнопки «Загрузить ещё»
   function card(item, index) {
+    const detailUrl =
+      item.href ||
+      `${isArticles ? 'article' : 'news'}-detail.html?id=${encodeURIComponent(item.id)}`;
+    const readingTime =
+      hasValue(item.minutes) && Number.isFinite(Number(item.minutes)) && Number(item.minutes) > 0
+        ? ` &nbsp;/&nbsp; ${escape(item.minutes)} мин чтения`
+        : '';
+    const tags = getTags(item);
+    const tagsHtml = tags.length
+      ? `<div class="media-tags">${tags.map((value) => `<a href="${escape(url(1, value))}">#${escape(value)}</a>`).join('')}</div>`
+      : '';
+    const dateHtml = hasValue(item.date)
+      ? `<time${hasValue(item.iso) ? ` datetime="${escape(item.iso)}"` : ''}>${escape(item.date)}</time>`
+      : '';
+    const imageHtml = hasValue(item.image)
+      ? `<div class="card-media">
+          <img src="${escape(item.image.startsWith('assets/') ? item.image : 'assets/images/' + item.image)}"
+            width="387" height="220" alt="${escape(item.alt)}" decoding="async"
+            ${index > 0 ? 'loading="lazy"' : 'fetchpriority="high"'}>
+        </div>`
+      : '';
     return `<article class="card">
-      <div class="card-media"><img src="assets/images/${escape(item.image)}" width="387" height="220" alt="${escape(item.alt)}" decoding="async"${index >= 3 ? ' loading="lazy"' : ''}></div>
-      <div class="card-body"><div class="card-content">
-        <div class="card-head"><p class="media-card-meta">${isArticles ? 'Статья' : 'Новость'} &nbsp; / &nbsp; ${item.minutes} мин чтения</p><h2 class="media-card-title"><a class="media-card-link" href="${isArticles ? 'article-detail' : 'news-detail'}.html?id=${encodeURIComponent(item.id)}">${escape(item.title)}</a></h2></div>
-        <div class="card-footer"><div class="media-tags">${item.tags.map((value) => `<a href="${escape(url(1, value))}">#${escape(value)}</a>`).join('')}</div><time datetime="${escape(item.iso)}">${escape(item.date)}</time></div>
-      </div></div>
+      ${imageHtml}
+      <div class="card-body">
+        <div class="card-content">
+          <div class="card-head">
+            <p class="media-card-meta">${isArticles ? 'Статья' : 'Новость'}${readingTime}</p>
+            <h2 class="media-card-title">
+              <a class="media-card-link" href="${escape(detailUrl)}">${escape(item.title)}</a>
+            </h2>
+          </div>
+          ${tagsHtml || dateHtml ? `<div class="card-footer">${tagsHtml}${dateHtml}</div>` : ''}
+        </div>
+      </div>
     </article>`;
   }
   function countWord(count) {
@@ -82,8 +120,7 @@
     pagination.hidden = pageCount <= 1;
   }
   updatePagination();
-  // Порция становится текущей, когда её начало проходит середину окна.
-  // Проверяем только первую карточку каждой шестёрки; сетка остаётся прежней.
+  // Раздел становится текущим, когда его начало проходит середину окна
   function syncVisiblePage() {
     const cards = grid.children;
     let visiblePage = page;

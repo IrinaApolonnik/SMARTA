@@ -59,6 +59,18 @@
   min-width: 0;
   line-height: 24px;
 }
+@media (max-width: 1271.98px) {
+  .media-hero-head p {
+    max-width: 472px;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+}
+@media (max-width: 767.98px) {
+  .media-hero-head p {
+    max-width: 358px;
+  }
+}
 .media-tabs {
   display: flex;
   border-radius: 4px 4px 0 0;
@@ -146,7 +158,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-/* Псевдоэлемент расширяет ссылку на карточку, не вкладывая другие ссылки внутрь неё. */
+/* Псевдоэлемент расширяет ссылку на карточку, не вкладывая другие ссылки внутрь неё */
 .media-card-link::after {
   content: '';
   position: absolute;
@@ -154,9 +166,25 @@
   border-radius: 4px;
   z-index: 1;
 }
-.card:hover .media-card-title,
-.news-item:hover h3 {
-  color: var(--media-link);
+/* Обводка поверх карточки не меняет её размеры и не перехватывает ссылки */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--media-primary);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+.card:hover::after,
+.card:focus-within::after {
+  opacity: 1;
+}
+.news-item:hover h3,
+.news-item:focus-within h3 {
+  color: var(--media-primary);
 }
 .media-card-link:focus-visible::after {
   outline: 2px solid var(--media-primary);
@@ -295,4 +323,37 @@
   color: var(--media-muted);
   font-size: 14px;
   line-height: 20px;
+}
+
+/* Плавные состояния элементов управления, без анимации размеров и отступов */
+.media :where(a, button, input, select, textarea, summary, [role='button']),
+.media .product-card,
+.media .news-item h3 {
+  transition: 200ms ease-in-out;
+}
+.media .media-tags a,
+.media .link-more {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+}
+.media .media-tags a:hover,
+.media .link-more:hover {
+  text-decoration-color: currentColor;
+}
+@media (prefers-reduced-motion: reduce) {
+  .media :where(a, button, input, select, textarea, summary, [role='button']),
+  .media .product-card,
+  .media .news-item h3,
+  .card::after {
+    transition: none;
+  }
+}
+
+/* Без изображения карточка сохраняет замкнутую рамку */
+.card > .card-body:first-child {
+  border-top: 1px solid #d4d6d8;
+  border-radius: 4px;
+}
+.card-featured > .card-body:first-child {
+  border: 0;
 }

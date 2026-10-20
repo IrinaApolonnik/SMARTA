@@ -88,10 +88,13 @@
 }
 .news-body li {
   display: flex;
+  align-items: flex-start;
   gap: 12px;
 }
 .news-body li img {
   flex: none;
+  width: 6px;
+  height: 16px;
 }
 .news-body blockquote {
   border-left: 4px solid var(--media-primary);
@@ -199,8 +202,9 @@
   color: var(--media-primary);
   font-size: 14px;
 }
-.news-nav-item:hover strong {
-  color: var(--media-primary);
+.news-nav-item:hover,
+.news-nav-item:focus-visible {
+  border-color: var(--media-primary);
 }
 .news-aside {
   display: flex;
@@ -301,8 +305,9 @@
   font-size: 16px;
   line-height: 20px;
 }
-.related .caption-label:hover {
-  color: var(--media-primary);
+.related .product-card:hover,
+.related .product-card:focus-within {
+  border-color: var(--media-primary);
 }
 .related .caption-info {
   display: flex;
@@ -395,8 +400,9 @@
   font-size: 14px;
   color: var(--media-muted);
 }
-.category-card:hover strong {
-  color: var(--media-primary);
+.category-card:hover,
+.category-card:focus-visible {
+  border-color: var(--media-primary);
 }
 .detail-status {
   font-size: 14px;
@@ -534,9 +540,6 @@
     font-size: 18px;
     line-height: 28px;
   }
-  .media-news-detail .news-body li {
-    align-items: flex-start;
-  }
   .media-news-detail .gallery-row {
     gap: 8px;
   }
@@ -566,4 +569,24 @@
   .media-news-detail .related .product-card {
     min-height: 0;
   }
+}
+
+/* Длинные коды и цены не расширяют колонки каталога. */
+.related .product-card,
+.related .card-content,
+.related .content-caption,
+.related .content-basket,
+.category-card > span {
+  min-width: 0;
+}
+.related .info-number,
+.related .info-available,
+.related .block-price,
+.related .basket-action {
+  flex-wrap: wrap;
+}
+.related .info-number-data,
+.related .info-available-data,
+.related .block-price-data {
+  min-width: 0;
 }
