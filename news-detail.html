@@ -31,36 +31,18 @@
   <body>
     <a class="media-skip-link" href="#main-content">Перейти к содержимому</a>
     <main class="media media-news-detail" id="main-content">
-      <!-- Медиапортал: заголовок и навигация по разделам -->
-      <section class="media-hero" aria-labelledby="media-title">
+      <!-- Компактная навигация внутренних страниц -->
+      <nav class="media-page-nav" aria-label="Навигация медиапортала">
         <div class="container">
-          <div class="media-hero-head">
-            <div class="media-hero-title" id="media-title">
-              <a href="mediaportal.html">Медиапортал</a>
-            </div>
-            <p>
-              Интерактивное цифровое пространство, объединяющее ключевые медиаресурсы нашей
-              экосистемы
-            </p>
+          <a class="media-back-link" href="mediaportal.html#news"
+            ><span aria-hidden="true">←</span> Медиапортал</a
+          >
+          <div class="media-page-links">
+            <a href="news.html" aria-current="true">Новости</a>
+            <a href="articles.html">Статьи</a>
           </div>
-          <nav class="media-tabs" aria-label="Разделы медиапортала">
-            <a class="media-tabs-item active" href="news.html" aria-current="page">Новости</a>
-            <a
-              class="media-tabs-item"
-              aria-disabled="true"
-              title="Раздел видео не входит в текущий этап"
-              >Видео</a
-            >
-            <a class="media-tabs-item" href="articles.html">Статьи</a>
-            <a
-              class="media-tabs-item"
-              aria-disabled="true"
-              title="Раздел файлов не входит в текущий этап"
-              >Файлы</a
-            >
-          </nav>
         </div>
-      </section>
+      </nav>
 
       <!-- Новость: текст, фотографии и соседние публикации -->
       <section class="news-detail" aria-labelledby="news-heading">

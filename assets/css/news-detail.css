@@ -1,6 +1,6 @@
 /* Desktop-макет 5369:26. Общие элементы наследуют components.css. */
 .media-news-detail {
-  min-width: 1272px;
+  min-width: 0;
 }
 .news-detail {
   padding: 48px 0 80px;
@@ -450,16 +450,6 @@
   .media-news-detail .container {
     width: calc(100% - 64px);
   }
-  .media-news-detail .media-hero {
-    padding-top: 24px;
-  }
-  .media-news-detail .media-hero-head {
-    width: 100%;
-  }
-  .media-news-detail .media-hero-title {
-    font-size: 32px;
-    line-height: 36px;
-  }
   .media-news-detail .news-layout {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -482,36 +472,6 @@
   }
   .media-news-detail .container {
     width: calc(100% - 32px);
-  }
-  .media-news-detail .media-hero {
-    padding-top: 24px;
-  }
-  .media-news-detail .media-hero-head {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  .media-news-detail .media-hero-title {
-    font-size: 28px;
-    line-height: 32px;
-  }
-  .media-news-detail .media-hero-head p {
-    flex: none;
-    width: 100%;
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .media-news-detail .media-tabs {
-    flex-wrap: nowrap;
-  }
-  .media-news-detail .media-tabs-item {
-    min-width: 0;
-    padding: 12px 8px;
-    font-size: 14px;
-    line-height: 20px;
-    white-space: nowrap;
   }
   .media-news-detail .news-detail {
     padding: 32px 0 48px;

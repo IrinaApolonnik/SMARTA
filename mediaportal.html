@@ -25,14 +25,23 @@
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
     <link rel="stylesheet" href="assets/css/pages.css" />
-    <script src="assets/js/main.js" defer></script>
   </head>
   <body>
     <a class="media-skip-link" href="#main-content">Перейти к содержимому</a>
     <main class="media media-home" id="main-content">
-      <!-- Медиапортал: заголовок и навигация по разделам -->
+      <!-- Баннер медиапортала и ссылки на разделы -->
       <section class="media-hero" aria-labelledby="media-title">
         <div class="container">
+          <img
+            class="media-hero-image"
+            src="assets/images/media-hero.png"
+            width="1208"
+            height="292"
+            alt=""
+            aria-hidden="true"
+            fetchpriority="high"
+            decoding="async"
+          />
           <div class="media-hero-head">
             <h1 id="media-title">Медиапортал</h1>
             <p>
@@ -41,123 +50,201 @@
             </p>
           </div>
           <nav class="media-tabs" aria-label="Разделы медиапортала">
-            <a class="media-tabs-item" href="news.html">Новости</a>
-            <a
-              class="media-tabs-item"
-              aria-disabled="true"
-              title="Раздел видео не входит в текущий этап"
-              >Видео</a
-            >
-            <a class="media-tabs-item" href="articles.html">Статьи</a>
-            <a
-              class="media-tabs-item"
-              aria-disabled="true"
-              title="Раздел файлов не входит в текущий этап"
-              >Файлы</a
-            >
+            <a class="media-tabs-item" href="#news">Новости</a>
+            <a class="media-tabs-item" href="#articles">Статьи</a>
+            <a class="media-tabs-item" href="#videos">Видео</a>
+            <a class="media-tabs-item" href="#files">Файлы</a>
           </nav>
         </div>
       </section>
-
-      <!-- Главная: главная новость и последние публикации -->
-      <section class="home-news" aria-label="Новости SMARTA">
-        <div class="container card-grid">
-          <article class="card card-featured">
-            <div class="card-media">
+      <!-- Подборка новостей: крупная карточка и четыре обычных -->
+      <section class="home-news" id="news" aria-labelledby="news-heading">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="news-heading">Делимся новостями</h2>
+            <a class="link-more" href="news.html"
+              >Все новости
               <img
-                src="assets/images/metalloobrabotka-2026.png"
-                width="592"
-                height="220"
-                alt="Стенд SMARTA на выставке Металлообработка-2026"
-                decoding="async"
-                fetchpriority="high"
-              />
-            </div>
-            <div class="card-body">
-              <div class="card-content">
-                <div class="card-head">
-                  <p class="media-card-meta">В фокусе / новости компании</p>
-                  <h2 class="media-card-title">
-                    <a class="media-card-link" href="news-detail.html?id=metalloobrabotka-2026"
-                      >МЕТАЛЛООБРАБОТКА-2026: Итоги выставки</a
-                    >
-                  </h2>
-                  <p class="media-card-description">
-                    Спасибо всем, кто посетил наш стенд! Были рады рассказать вам о наших новинках и
-                    возможностях, познакомить со специальными изделиями и решениями для
-                    металлообрабатывающей промышленности, а также показать оборудование в действии.
-                  </p>
-                </div>
-                <a class="link-more" href="news-detail.html?id=metalloobrabotka-2026"
-                  >Подробнее
-                  <img
-                    src="assets/icons/arrow-right.svg"
-                    width="16"
-                    height="12"
-                    alt=""
-                    aria-hidden="true"
-                /></a>
+                src="assets/icons/arrow-right.svg"
+                width="16"
+                height="12"
+                alt=""
+                aria-hidden="true"
+            /></a>
+          </div>
+          <div class="card-grid">
+            <article class="card card-featured">
+              <div class="card-media">
+                <img
+                  src="assets/images/metalloobrabotka-2026.png"
+                  width="796"
+                  height="220"
+                  alt="Стенд SMARTA на выставке Металлообработка-2026"
+                  decoding="async"
+                  loading="lazy"
+                />
               </div>
-            </div>
-          </article>
-          <div class="news-latest-col">
-            <div class="news-latest">
-              <h2>Последние новости</h2>
-              <article class="news-item">
-                <time datetime="2026-09-01">1 сентября 2026</time>
-                <h3>
-                  <a class="media-card-link" href="news-detail.html?id=agroprodmash-2026"
-                    >Приглашаем вас посетить наш стенд на выставке Агропродмаш 2026</a
-                  >
-                </h3>
-                <div class="media-tags">
-                  <a href="news.html?tag=Выставки">#Выставки</a
-                  ><a href="news.html?tag=Агропродмаш">#Агропродмаш</a
-                  ><a href="news.html?tag=2026">#2026</a>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">В фокусе / новости компании</p>
+                    <h2 class="media-card-title">
+                      <a class="media-card-link" href="news-detail.html?id=metalloobrabotka-2026"
+                        >МЕТАЛЛООБРАБОТКА-2026: Итоги выставки</a
+                      >
+                    </h2>
+                    <p class="media-card-description">
+                      Спасибо всем, кто посетил наш стенд! Были рады рассказать вам о наших новинках
+                      и возможностях, познакомить со специальными изделиями и решениями для
+                      металлообрабатывающей промышленности, а также показать оборудование в
+                      действии.
+                    </p>
+                  </div>
+                  <a class="link-more" href="news-detail.html?id=metalloobrabotka-2026"
+                    >Подробнее
+                    <img
+                      src="assets/icons/arrow-right.svg"
+                      width="16"
+                      height="12"
+                      alt=""
+                      aria-hidden="true"
+                  /></a>
                 </div>
-              </article>
-              <article class="news-item">
-                <time datetime="2026-05-27">27 мая 2026</time>
-                <h3>
-                  <a class="media-card-link" href="news-detail.html?id=company-address"
-                    >С 25.06.2026 изменился юридический адрес и КПП</a
-                  >
-                </h3>
-                <div class="media-tags">
-                  <a href="news.html?tag=СМАРТА">#СМАРТА</a><a href="news.html?tag=Адрес">#Адрес</a>
-                </div>
-              </article>
-              <article class="news-item">
-                <time datetime="2026-05-27">27 мая 2026</time>
-                <h3>
-                  <a class="media-card-link" href="news-detail.html?id=coal-mining-2026"
-                    >Приглашаем вас посетить наш стенд на выставке Уголь России и Майнинг 2026</a
-                  >
-                </h3>
-                <div class="media-tags">
-                  <a href="news.html?tag=Выставки">#Выставки</a
-                  ><a href="news.html?tag=УгольРоссииМайнинг">#УгольРоссииМайнинг</a
-                  ><a href="news.html?tag=2026">#2026</a>
-                </div>
-              </article>
-              <div class="news-latest-footer">
-                <a class="link-more" href="news.html"
-                  >Все новости
-                  <img
-                    src="assets/icons/arrow-right.svg"
-                    width="16"
-                    height="12"
-                    alt=""
-                    aria-hidden="true"
-                /></a>
               </div>
-            </div>
+            </article>
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="assets/images/agroprodmash-2026.png"
+                  width="386"
+                  height="220"
+                  alt="Приглашение на выставку Агропродмаш 2026"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Новость / 5 мин чтения</p>
+                    <h3 class="media-card-title">
+                      <a class="media-card-link" href="news-detail.html?id=agroprodmash-2026"
+                        >Приглашаем вас посетить наш стенд на выставке Агропродмаш 2026</a
+                      >
+                    </h3>
+                  </div>
+                  <div class="card-footer">
+                    <div class="media-tags">
+                      <a href="news.html?tag=Выставки">#Выставки</a
+                      ><a href="news.html?tag=Агропродмаш">#Агропродмаш</a
+                      ><a href="news.html?tag=2026">#2026</a>
+                    </div>
+                    <time datetime="2026-09-01">1 сентября 2026</time>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="assets/images/company-address.png"
+                  width="386"
+                  height="220"
+                  alt="SMART Автоматизация сообщает о смене адреса"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Новость / 1 мин чтения</p>
+                    <h3 class="media-card-title">
+                      <a class="media-card-link" href="news-detail.html?id=company-address"
+                        >С 25.06.2026 изменился юридический адрес и КПП</a
+                      >
+                    </h3>
+                  </div>
+                  <div class="card-footer">
+                    <div class="media-tags">
+                      <a href="news.html?tag=СМАРТА">#СМАРТА</a
+                      ><a href="news.html?tag=Адрес">#Адрес</a>
+                    </div>
+                    <time datetime="2026-05-27">27 мая 2026</time>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="assets/images/coal-mining-2026.png"
+                  width="386"
+                  height="220"
+                  alt="Приглашение на выставку Уголь России и Майнинг 2026"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Новость / 2 мин чтения</p>
+                    <h3 class="media-card-title">
+                      <a class="media-card-link" href="news-detail.html?id=coal-mining-2026"
+                        >Приглашаем вас посетить наш стенд на выставке Уголь России и Майнинг
+                        2026</a
+                      >
+                    </h3>
+                  </div>
+                  <div class="card-footer">
+                    <div class="media-tags">
+                      <a href="news.html?tag=Выставки">#Выставки</a
+                      ><a href="news.html?tag=УгольРоссииМайнинг">#УгольРоссииМайнинг</a
+                      ><a href="news.html?tag=2026">#2026</a>
+                    </div>
+                    <time datetime="2026-05-27">27 мая 2026</time>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media">
+                <img
+                  src="assets/images/home-metalloobrabotka.png"
+                  width="386"
+                  height="220"
+                  alt="Стенд SMARTA на выставке Металлообработка"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Новость / 2 мин чтения</p>
+                    <h3 class="media-card-title">
+                      <a class="media-card-link" href="news-detail.html?id=metalloobrabotka-2026"
+                        >МЕТАЛЛООБРАБОТКА-2026: Итоги выставки</a
+                      >
+                    </h3>
+                  </div>
+                  <div class="card-footer">
+                    <div class="media-tags">
+                      <a href="news.html?tag=Выставки">#Выставки</a
+                      ><a href="news.html?tag=МЕТАЛЛООБРАБОТКА">#МЕТАЛЛООБРАБОТКА</a
+                      ><a href="news.html?tag=2026">#2026</a>
+                    </div>
+                    <time datetime="2026-04-21">21 апреля 2026</time>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
-
-      <!-- Главная: подборка статей -->
-      <section class="home-articles" aria-labelledby="articles-heading">
+      <!-- Горизонтальные карточки статей -->
+      <section class="home-articles" id="articles" aria-labelledby="articles-heading">
         <div class="container">
           <div class="section-head">
             <h2 id="articles-heading">Разбираемся в деталях</h2>
@@ -171,121 +258,123 @@
                 aria-hidden="true"
             /></a>
           </div>
-
-          <!-- Карточки публикаций -->
-          <div class="card-grid" id="article-list">
-            <article class="card">
+          <div class="card-list">
+            <article class="card card-horizontal">
               <div class="card-media">
                 <img
                   src="assets/images/pneumatic-cylinders.png"
-                  width="387"
-                  height="220"
+                  width="284"
+                  height="174"
                   alt="Пневмоцилиндры разных типов и размеров"
-                  decoding="async"
                   loading="lazy"
-                />
-              </div>
-              <div class="card-body">
-                <div class="card-content">
-                  <div class="card-head">
-                    <p class="media-card-meta">Статья / 4 мин чтения</p>
-                    <h3 class="media-card-title">
-                      <a class="media-card-link" href="article-detail.html?id=pneumatic-cylinder"
-                        >Как подобрать пневмоцилиндр под вашу задачу</a
-                      >
-                    </h3>
-                  </div>
-                  <div class="card-footer">
-                    <div class="media-tags">
-                      <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
-                      ><a href="articles.html?tag=Практика">#Практика</a>
-                    </div>
-                    <time datetime="2026-09-25">25 сентября 2026</time>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-media">
-                <img
-                  src="assets/images/air-preparation.png"
-                  width="387"
-                  height="220"
-                  alt="Схема блока подготовки сжатого воздуха"
                   decoding="async"
-                  loading="lazy"
-                />
-              </div>
-              <div class="card-body">
-                <div class="card-content">
-                  <div class="card-head">
-                    <p class="media-card-meta">Статья / 4 мин чтения</p>
-                    <h3 class="media-card-title">
-                      <a class="media-card-link" href="article-detail.html?id=air-preparation"
-                        >Подготовка сжатого воздуха: с чего начать</a
-                      >
-                    </h3>
-                  </div>
-                  <div class="card-footer">
-                    <div class="media-tags">
-                      <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
-                      ><a href="articles.html?tag=Практика">#Практика</a>
-                    </div>
-                    <time datetime="2026-09-18">18 сентября 2026</time>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-media">
-                <img
-                  src="assets/images/directional-valve.png"
-                  width="387"
-                  height="220"
-                  alt="Устройство пневмораспределителя с обозначениями деталей"
-                  decoding="async"
-                  loading="lazy"
                 />
               </div>
               <div class="card-body">
                 <div class="card-content">
                   <div class="card-head">
                     <p class="media-card-meta">Статья / 5 мин чтения</p>
-                    <h3 class="media-card-title">
-                      <a class="media-card-link" href="article-detail.html?id=directional-valve"
-                        >Пять ошибок при выборе пневмораспределителя</a
-                      >
-                    </h3>
-                  </div>
-                  <div class="card-footer">
-                    <div class="media-tags">
-                      <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
-                      ><a href="articles.html?tag=Обучение">#Обучение</a>
-                    </div>
                     <time datetime="2026-09-15">15 сентября 2026</time>
+                  </div>
+                  <h3 class="media-card-title">
+                    <a class="media-card-link" href="article-detail.html?id=pneumatic-cylinder"
+                      >Как подобрать пневмоцилиндр под вашу задачу</a
+                    >
+                  </h3>
+                  <p class="media-card-category">Оборудование и решения</p>
+                </div>
+                <div class="card-footer">
+                  <div class="media-tags">
+                    <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                    ><a href="articles.html?tag=Практика">#Практика</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card card-horizontal">
+              <div class="card-media">
+                <img
+                  src="assets/images/air-preparation.png"
+                  width="284"
+                  height="174"
+                  alt="Схема блока подготовки сжатого воздуха"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Статья / 5 мин чтения</p>
+                    <time datetime="2026-09-15">15 сентября 2026</time>
+                  </div>
+                  <h3 class="media-card-title">
+                    <a class="media-card-link" href="article-detail.html?id=air-preparation"
+                      >Подготовка сжатого воздуха: с чего начать</a
+                    >
+                  </h3>
+                  <p class="media-card-category">Оборудование и решения</p>
+                </div>
+                <div class="card-footer">
+                  <div class="media-tags">
+                    <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                    ><a href="articles.html?tag=Практика">#Практика</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card card-horizontal">
+              <div class="card-media">
+                <img
+                  src="assets/images/directional-valve.png"
+                  width="284"
+                  height="174"
+                  alt="Устройство пневмораспределителя"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <div class="card-head">
+                    <p class="media-card-meta">Статья / 5 мин чтения</p>
+                    <time datetime="2026-09-15">15 сентября 2026</time>
+                  </div>
+                  <h3 class="media-card-title">
+                    <a class="media-card-link" href="article-detail.html?id=directional-valve"
+                      >Пять ошибок при выборе пневмораспределителя</a
+                    >
+                  </h3>
+                  <p class="media-card-category">Оборудование и решения</p>
+                </div>
+                <div class="card-footer">
+                  <div class="media-tags">
+                    <a href="articles.html?tag=Пневмоавтоматика">#Пневмоавтоматика</a
+                    ><a href="articles.html?tag=Обучение">#Обучение</a>
                   </div>
                 </div>
               </div>
             </article>
           </div>
-          <p class="media-load-status" id="load-status" role="status" hidden></p>
-
-          <!-- Подгрузка материалов и переключение страниц -->
-          <div class="list-actions">
-            <button
-              class="btn btn-outline"
-              type="button"
-              id="load-more"
-              aria-controls="article-list"
-            >
-              Загрузить ещё
-            </button>
+        </div>
+      </section>
+      <!-- Временные блоки для будущих разделов; якоря уже доступны -->
+      <section class="home-preview" id="videos" aria-labelledby="videos-heading">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="videos-heading">Видео</h2>
+            <span class="media-coming-soon">Скоро</span>
           </div>
-          <noscript
-            ><p class="media-load-status">
-              Все доступные материалы находятся в <a href="articles.html">разделе статей</a>.
-            </p></noscript
-          >
+          <p>Раздел готовится к публикации. Здесь появятся видеоматериалы SMARTA.</p>
+        </div>
+      </section>
+      <section class="home-preview" id="files" aria-labelledby="files-heading">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="files-heading">Файлы</h2>
+            <span class="media-coming-soon">Скоро</span>
+          </div>
+          <p>Раздел готовится к публикации. Здесь появятся каталоги и полезные документы.</p>
         </div>
       </section>
     </main>

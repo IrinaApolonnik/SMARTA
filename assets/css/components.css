@@ -37,9 +37,6 @@
   padding: 0;
   margin-inline: auto;
 }
-.media-hero {
-  background: #f6f7f8;
-}
 .media-hero-head {
   display: flex;
   align-items: center;
